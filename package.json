@@ -10,7 +10,7 @@
 		"prepackage": "rimraf -rf dist && rimraf -rf lib && yarn build",
 		"package": "ncc build --source-map --license licenses.txt",
 		"test": "jest --passWithNoTests",
-		"postinstall": "husky install",
+		"postinstall": "npx husky",
 		"semantic-release": "semantic-release"
 	},
 	"repository": {
