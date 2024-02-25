@@ -1,10 +1,10 @@
-name: Dependent Issues
-description: Mark issues as dependent on another
-author: Ahmed T. Ali
+name: Dependent Issues Redux
+description: Mark issues as dependent on another, a fork of https://github.com/z0al/dependent-issues.
+author: Ahmed T. Ali & fork by John McCall
 
 branding:
   icon: box
-  color: black
+  color: purple
 
 inputs:
   label:
@@ -38,5 +38,5 @@ inputs:
       By **[Dependent Issues](https://github.com/z0al/dependent-issues)** (🤖). Happy coding!
 
 runs:
-  using: node16
+  using: node20
   main: ./index.js
