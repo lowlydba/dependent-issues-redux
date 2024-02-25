@@ -292,7 +292,7 @@ exports.IssueManager = exports.DependencyResolver = exports.DependencyExtractor 
 // Packages
 const dequal_1 = __nccwpck_require__(8713);
 const lodash_uniqby_1 = __importDefault(__nccwpck_require__(3586));
-const issue_regex_1 = __importDefault(__nccwpck_require__(3516));
+const issue_regex_1 = __importDefault(__nccwpck_require__(2506));
 function formatDependency(dep, repo) {
     const depRepo = { owner: dep.owner, repo: dep.repo };
     if ((0, dequal_1.dequal)(depRepo, repo)) {
@@ -7292,6 +7292,18 @@ function dequal(foo, bar) {
 }
 
 exports.dequal = dequal;
+
+/***/ }),
+
+/***/ 2506:
+/***/ ((module) => {
+
+"use strict";
+
+
+// https://regex101.com/r/SQrOlx/14
+module.exports = () => /(?:(?<![/\w-.])\w[\w-.]+\/\w[\w-.]+|\B)#[1-9]\d*\b/g;
+
 
 /***/ }),
 
@@ -34544,22 +34556,6 @@ function parseParams (str) {
 module.exports = parseParams
 
 
-/***/ }),
-
-/***/ 3516:
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __nccwpck_require__) => {
-
-"use strict";
-__nccwpck_require__.r(__webpack_exports__);
-/* harmony export */ __nccwpck_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ issueRegex)
-/* harmony export */ });
-// https://regex101.com/r/SQrOlx/14
-function issueRegex() {
-	return /(?<!\w)(?:(?<organization>[a-z\d](?:[a-z\d-]{0,37}[a-z\d])?)\/(?<repository>[\w.-]{1,100}))?(?<!(?:\/\.{1,2}))#(?<issueNumber>[1-9]\d{0,9})\b/gi;
-}
-
-
 /***/ })
 
 /******/ 	});
@@ -34598,34 +34594,6 @@ function issueRegex() {
 /******/ 	}
 /******/ 	
 /************************************************************************/
-/******/ 	/* webpack/runtime/define property getters */
-/******/ 	(() => {
-/******/ 		// define getter functions for harmony exports
-/******/ 		__nccwpck_require__.d = (exports, definition) => {
-/******/ 			for(var key in definition) {
-/******/ 				if(__nccwpck_require__.o(definition, key) && !__nccwpck_require__.o(exports, key)) {
-/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
-/******/ 				}
-/******/ 			}
-/******/ 		};
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
-/******/ 	(() => {
-/******/ 		__nccwpck_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/make namespace object */
-/******/ 	(() => {
-/******/ 		// define __esModule on exports
-/******/ 		__nccwpck_require__.r = (exports) => {
-/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
-/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-/******/ 			}
-/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
-/******/ 		};
-/******/ 	})();
-/******/ 	
 /******/ 	/* webpack/runtime/node module decorator */
 /******/ 	(() => {
 /******/ 		__nccwpck_require__.nmd = (module) => {
